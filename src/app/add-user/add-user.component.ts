@@ -29,7 +29,7 @@ export class AddUserComponent implements OnInit {
     });
 
     let obj = JSON.parse(this.userService.serverResponse);
-    
+
     this.firstNameError = obj.first_name[0];
     this.lastNameError = obj.last_name[0];
     this.emailError = obj.email[0];
@@ -43,9 +43,12 @@ export class AddUserComponent implements OnInit {
       console.log("Time to add the User");
 
     } else {
-
+      this.firstNameStatus= true;
+      this.lastNameStatus = true;
+      this.emailStatus = true;
+      
     }
- 
+
 
   }
   ngOnInit() {
@@ -73,7 +76,7 @@ export class AddUserComponent implements OnInit {
       } else {
           return false;
       }
-    } 
+    }
     return false;
   }
 
